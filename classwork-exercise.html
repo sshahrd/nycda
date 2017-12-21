@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Class work</title>
+	<h1>Welcome to the class. </h1>
+	<style type="text/css">
+		body{
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+
+<span id="user"></span>
+
+<br>
+<br>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script type="text/javascript">
+  
+$("#btn").click(function(){
+    var username = $(".username").val();
+    var password = $(".password").val();
+    console.log(username);
+    console.log(password);
+    if (username != "" && username == password){
+        Cookies.set('userCookie2', username, { expires: 1 });
+        var user = Cookies.get('userCookie2');
+
+        $(".content").html("<h3 class='text-center'>Yay!!! I'm logged in and class is in session.</h3>" + 
+            "<br><a href='classwork-exercise.html'>Go to the cookie class</a>");
+
+        $("#user").html("You are logged in, " + user);
+        $("#user").css("color", "green");
+    } else {
+            $("#user").html("username and password don't match. Try again.");
+            $("#user").css("color", "red");
+    }
+
+})
+
+$("#btn2").click(function(){
+    Cookies.set('userCookie2', ' ');
+    $("#user").html("You have logged out");
+    $("#user").css("color", "red");
+})
+
+
+var user = Cookies.get('userCookie2');
+if (user != " "){
+    $("#user").html(user+ ", welcome to class");
+    }
+</script>
+</body>
+</html>

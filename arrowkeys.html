@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	body{
+	/*height: 200px;
+	width: 200px;
+	position: relative;*/
+	/*background: linear-gradient(red, yellow);*/
+	/*animation: move-around 3s 7;*/
+	background-image: url('space.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	}
+	#box{
+		position: absolute;
+		left: 400px;
+		top: 60%;
+		width: 100px;
+		height: 100px;
+		/*background-color: blue;*/
+		background-image: url('spaceship1.png');
+		/*animation: move-around 6s 4;*/
+	}
+	#result{
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		top: 40%;
+		left: 40%;
+		color: white;
+		display: none;
+	}
+	@keyframes move-around {
+		0%{
+			top: 0px;
+		}
+
+		50%{
+				left:100px;
+			}
+
+		100%{
+			top: 300px;
+		}
+	}
+	</style>
+
+	<title>Using arrow keys</title>
+</head>
+<body>
+
+<!-- <div id="box1"></div>
+<div id="box2"></div>
+ -->
+<div id="box"></div>
+
+<div id="result">You win</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+/*
+Left = 37
+Up = 38
+Right = 39
+Down = 40
+*/
+
+console.log("test 2");
+$(document).keydown(function(e){
+
+if(e.which == 37) {
+	$("#box").css("left", "-=40px");
+	}
+if(e.which == 40) {
+	$("#box").css("top", "+=40px");
+	}
+if(e.which === 38) {
+	$("#box").css("top", "-=40px");
+
+	var boxPosition = $("#box").position();
+	var boxXPosition = boxPosition.left;
+	var boxYPosition = boxPosition.top;
+	console.log (boxYPosition);
+
+	if(boxYPosition < 50) {
+		// alert("You win");
+		$("#result").fadeIn();
+		$("#result").css("background-color", "red"); 
+	}
+
+	}
+if(e.which === 39) {
+	$("#box").css("left", "+=40px");
+	}
+})
+
+</script>
+</body>
+</html>

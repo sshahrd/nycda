@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+img{
+    width: 300px;
+    height: 250px;
+}
+
+nav{
+	 	width: 80%;
+	 	height: 50px;
+	 	background-color: black;
+	 	color: white;
+	 	margin: 0 5%;
+	 /*	position: fixed;*/
+	 }
+
+li{
+	 	display: inline-block;
+	 	padding-left: 20px;
+
+	 }
+
+	 a{
+	 color: white;
+	 	text-decoration: none;
+
+	 }
+
+</style>
+</head>
+<body>
+<div id="container">
+<h1> JERSEY NEWS JOURNAL </h1>
+<h2> Sports News </h2>
+<nav>
+<ul>
+<li><a id="home" href="#">Home</a></li> 
+<li><a id="economy" href="#page-economy">Economy</a></li>
+<li><a id="entertainment" href="#page-entertainment">Entertainment</a></li>
+<li><a id="sports" href="#page-sports">Sports</a></li>
+ 	</ul>
+</nav>
+
+<div class="all-news-articles"></div>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+
+var apiKey = 'f6f82209f310452ab39a5dd0adb391c1'  // my api key for News API
+
+$.getJSON('https://newsapi.org/v1/articles?source=cnn&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+     title + "<br>" +
+         content + "<br>" +
+         date + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        );
+}
+}
+)
+
+
+$("#home").click(function() {
+ $(".all-news-articles").html("");
+$("h2").html("Current News");
+
+$.getJSON('https://newsapi.org/v1/articles?source=cnn&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+     title + "<br>" +
+         content + "<br>" +
+         date + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        );
+}
+
+})
+})
+    
+
+$("#economy").click(function() {
+ $(".all-news-articles").html("");
+$("h2").html("The Economy News");
+
+$.getJSON('https://newsapi.org/v1/articles?source=the-economist&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+     title + "<br>" +
+         content + "<br>" +
+         date + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        );
+}
+
+})
+})
+    
+
+    $("#entertainment").click(function() {
+ $(".all-news-articles").html("");
+$("h2").html("Entertainment News");
+
+$.getJSON('https://newsapi.org/v1/articles?source=mtv-news&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+     title + "<br>" +
+         content + "<br>" +
+         date + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        );
+}
+
+})
+})
+    $("#sports").click(function() {
+ $(".all-news-articles").html("");
+$("h2").html("Sports News");
+
+$.getJSON('https://newsapi.org/v1/articles?source=espn&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+     title + "<br>" +
+         content + "<br>" +
+         date + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        );
+}
+
+})
+}) 
+
+</script>
+</body>
+</html>

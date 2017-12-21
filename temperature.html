@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="temperature.css">
+</head>
+<body>
+<div>
+<select id="degrees">
+<option>Fareneheight to Celsius</option>
+<option>Celsius to Farenheight</option>
+</select>
+</div>
+<br>
+<input type= "temperature" name= "temperature" id="temperature"><br>
+
+
+ <br>
+ <br>
+ <br>
+
+<button id="btn">Convert</button><br>
+
+<span id="result"></span>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+ 
+
+$("#btn").click(function() {
+
+if ($("#degrees").val() == "Celsius to Farenheight"){
+var temperature = $("#temperature").val()
+
+var result = (temperature * 9/5) + 32;
+
+$("#result").html("Temperature is: " + result + " degrees C.");
+}
+
+if ($("#degrees").val() == "Fareneheight to Celsius"){
+var temperature = $("#temperature").val();
+
+var result = (temperature - 32) * 5/9;
+result = result.toFixed(2);
+$("#result").html("Is equal to: " + result + " degreesF.");
+}
+
+
+})
+
+</script>
+
+</body>
+</html>

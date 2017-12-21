@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+	body{
+		background-color: maroon;
+		color: white;
+	}
+
+</style>
+</head>
+<body>
+
+<img class="movie1" src = "http://www.omdbapi.com/?apikey=3f67ef44&t=">
+
+
+
+<br>
+<br>
+<br>
+<br> Movie Title: <input type="text" name="movie" id="movie1"><br>
+<br>
+
+<img id="pic" src="">
+
+Year: <span id="yearproduced"></span><br>
+
+Run Time: <span id="runtime1"></span><br>
+
+Rated: <span id="rated"></span><br>
+
+Genre: <span id="genre"></span><br>
+
+
+<br>
+
+<br><button id="btn">Get Movie Info</button>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+$("#btn").click(function(){ 
+var movie1 = $("#movie1").val();
+
+$.getJSON("http://www.omdbapi.com/?apikey=3f67ef44&t=" + movie1,
+	function(data){
+		console.log(data);
+
+
+var yearproduced = data["Year"];
+   $("#yearproduced").html(yearproduced);
+
+ var runtime1 = data["Runtime"];
+ $("#runtime1").html(runtime1);
+
+ var rated = data["Rated"];
+ $("#rated").html(rated);
+
+ var genre = data["Genre"];
+ $("#genre").html(genre);
+
+ var pic= data["Poster"];
+$("#pic").attr("src", pic);
+
+})
+})
+
+
+
+ // var imageSrc = "http://openweathermap.org/img/w/" + myIcon + ".png";
+ //    console.log(imageSrc); 
+ //   $("#imagecondition").attr("src", imageSrc);
+
+//  var runtime1 = data["Ratings"]["Runtime"];
+//  $("runtime1").html(Runtime);
+
+	
+
+
+
+
+ 
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	/*<link rel="stylesheet" type="text/css" href="popup.css">
+*/
+	.modal-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,.6);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+.modal{
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 30%;
+	padding: 30px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+} 
+
+.js-modal-close{
+	margin-left: 90%;
+}
+
+</style>
+</head>
+<body>
+
+	<button id="openModal">Open Modal</button>
+
+	<div class="modal-wrapper">
+	   <div class="modal">
+	  <header class="modal-header">
+	      <button class="btn js-modal-close">X</button>
+	   </header>
+	  <div class="modal-content">
+	  	<h3> Title of Modal</h3>
+	  	<p>Content of Modal. Learning to use modal is very cool. You can use
+	  	it for pop-ups as well as alerts. </p>
+	  	<button class="js-modal-close">Close</button>
+	  </div>
+	</div>
+	</div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+// open modal
+$('#openModal').click(function() {
+	$('.modal-wrapper').fadeIn();
+
+// var First Name = $("#firstname").val();
+// var Last Name = $("lastname").val();
+// var Address = $("address").val();
+// var Major = $("major").val();
+// var Degree = $('degree').val();
+// var Year
+
+})
+
+//To close modal
+$('.js-modal-close').click(function() {
+	$('.modal-wrapper').fadeOut();
+})
+
+
+</script>
+
+ <!-- <script type="text/javascript"></script> -->
+</body>
+</html>

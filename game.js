@@ -1,0 +1,1 @@
+if ( secret number = 7)

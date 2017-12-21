@@ -1,0 +1,33 @@
+.box1 {
+	background-color: red;
+	width: 400px;
+	height: 400px;
+	text-align: center;
+	margin: 0 auto;
+ 
+ }
+
+ .box2 {
+ 	background-color: blue;
+ 	width: 200px;
+ 	height: 200px;
+ 	text-align: center;
+ 	position: relative;
+ 	left: 300px;
+ }
+
+ .box3 {
+ 	background-color: yellow;
+ 	width: 200px;
+ 	height: 600px;
+ 	position: fixed;
+ }
+
+ .box4 {
+ 	background-color: green;
+ 	width: 100px;
+ 	height: 100px;
+ 	position: absolute;
+ 	bottom: 100px;
+ }
+

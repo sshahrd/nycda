@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+	
+	#carousel{
+	width: 720px;
+	height: 400px;
+	overflow: hidden;
+}
+
+.slides{
+	display: block;
+	width: 3000px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+}
+
+.sunset{
+	float: left;
+	width: 720px;
+	height: 400px;
+}
+
+</style>
+</head>
+<body>
+<nav>
+<ul>
+<li><a id="home" href="#page-home">Home</a></li> 
+<li><a id="about" href="#page-about-us">About Us</a></li>
+<li><a id="contact" href="#page-contact-us">Contact Us</a></li>
+ 	</ul>
+</nav>
+<br>
+<br>
+<div id="carousel">
+	<div class="slides">
+<img src="sunset1.png" class="sunset">
+<img src="sunset2.png" class="sunset">
+<img src="sunset3.png" class="sunset">
+<img src="sunset1.png" class="sunset">
+
+ </div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+
+var currentSlide = 1;
+var startCarousel = setInterval(startSliding, 1000);
+function startSliding(){
+    $("#carousel .slides").animate({'margin-left': '-=720px'}, 
+        1000, function(){
+        currentSlide++;
+            if(currentSlide == $(".sunset").length){
+                currentSlide = 1;
+                $(".slides").css('margin-left', 0);
+            }
+    });
+}
+$("#carousel").mouseover(function(){
+    clearInterval(startCarousel);
+})
+$("#carousel").mouseleave(function(){
+    startCarousel = setInterval(startSliding, 1000);
+})
+
+</script>
+</body>
+</html>

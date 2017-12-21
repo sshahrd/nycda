@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+
+<style type="text/css">
+
+.black, .red, .green{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	color: white;
+	display: inline-block;
+}
+
+.black{
+	background-color: black;
+}
+
+.red{
+	background-color: red;
+}
+
+.green{
+	background-color: green;
+}
+
+</style>
+</head>
+<body>
+
+<div class="black box"> Box1</div>
+
+<div class="red box"> Box2</div>
+
+<div class="green box"> Box 3</div>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+var index = 0;
+slideshow();
+
+function slideshow(){
+	$(".box").css("display", "none")
+	index++;
+	if (index > $(".box").length){
+		index = 1; 
+	}
+$(".box").eq(index-1).css("display" , "block");
+setTimeout(slideshow, 2000); // Change image every 2 sec
+}
+
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+  <br>
+  <br>
+	<h1 class="title1"> Current Weather Information </h1>
+
+	<style type="text/css">
+      
+
+     .title1 {
+     	font-size: 20px;
+     	font-family: bold;
+     	text-align: center;
+      background: linear-gradient(blue, lightblue);
+     }
+     
+	.weathermap {
+
+		height:350px;
+		width: 600px;
+		margin-left: 30%;
+	}
+  
+  #btn{
+    color: white;
+    background-color: green;
+  }
+  
+	body{
+		background-color: lightblue;
+
+   
+	}
+
+</style>
+</head>
+<body>
+
+<img class="weathermap" src="https://dsx.weather.com/util/image/map/acttemp_1280x720.jpg?v=ap&w=1280&h=720&api=7db9fe61-7414-47b5-9871-e17d87b8b6a0"><br><br>
+
+<img id="icon" src = "">
+
+<br>
+<br>
+<br>
+<br> US City: <input type="text" name="city" id="city2"><br>
+<br>
+
+Temperature: &#8457:<span id="temp2"></span><br>
+
+Humidity (%): <span id="humidity2"></span><br>
+
+Wind Speed (mph): <span id="windspeed2"></span><br>
+
+Pressure: <span id="pressure2"></span><br>
+
+Description: <span id="description2"></span><br>
+
+Image Condition: <img src="" id="imagecondition"><br>
+
+<br>
+
+<br><button id="btn">Get Weather Info</button>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+$("#btn").click(function(){ 
+var city2 = $("#city2").val();
+
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city2 + ',us&units=imperial&APPID=ff35f414ce471fc8ed06d312eeb7ac17',
+
+ function(data) {
+   console.log(data);
+   var temp = data["main"]["temp"];
+   $("#temp2").html(temp);
+
+   var humidity = data["main"]["humidity"];
+   $("#humidity2").html(humidity);
+
+   var windspeed = data["wind"]["speed"];
+   $("#windspeed2").html(windspeed);
+
+   var pressure = data["main"]["pressure"];
+   $("#pressure2").html(pressure);
+
+   var weathertype = data["weather"][0]["description"];
+   $("#description2").html(weathertype);
+
+   var myIcon = data["weather"][0]["icon"];
+
+   
+    
+    var imageSrc = "http://openweathermap.org/img/w/" + myIcon + ".png";
+    console.log(imageSrc); 
+   $("#imagecondition").attr("src", imageSrc);
+  
+ })
+
+// console.log("http://www.omdbapi.com/apikey.aspx?VERIFYKEY=cfc1dac2-0238-4d62-90b8-b574a7228797")
+//   $.getJSON("http://www.omdbapi.com/apikey.aspx?VERIFYKEY=cfc1dac2-0238-4d62-90b8-b574a7228797"),
+//         function(data){
+//           console.log(data)
+//         }
+
+})
+
+
+</script>
+</body>
+</html>

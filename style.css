@@ -1,0 +1,28 @@
+/*div {
+	color: orange;
+	background-color: black;
+	text-align: center;
+
+}*/
+
+#events {
+	color: white;
+	 background-color: red;
+	 text-align: left;
+}
+
+img{
+	float: left;
+}
+
+h1{
+	text-align: center;
+	color: darkgreen;
+}
+
+h4{text-align: center;
+}
+
+ul{
+	margin-left: 250px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Aboutme.css">
+
+</head>
+<body>
+<h1> Outpatient Registration </h1>
+<ul>
+<li> Date: </li>
+<li> Patient name: </li>
+<li> DOB:          </li>
+<li> Pt Insurance: </li>
+<li> Reason for visit: </li>
+</ul>
+
+<h2> The Healthier You!</h2>
+
+<img src="https://image.shutterstock.com/z/stock-vector-benefit-of-healthy-food-438856606.jpg">
+
+
+<h3><em><span> Patient History and Physical </em></span><h3>
+ <li> Height:    </li>
+ <li> Weight:    </li>
+ <li> DOB:       </li>
+ <li> Medical diagnosis: </li>
+ <li> Current medications: </li>
+ <li> Food allergies: </li>
+
+ <h3><em>Food and physical activity pattern </em><h3>
+
+
+ <div> 24 hour food recall: </div>
+
+ <div> Current medical related restricted diets: </div>
+
+ <li> Any attempted wt loss diets: </div>
+
+ <div> Physical activity at present: </div>
+
+ <div> Limitations in physiscal activity: </div>
+
+ <div> Unintended Wt or appetite changes in last 6 months and reason: </div>
+
+ <div class="myname"><em> Sonal V. Shah, MS,RD. </em></div>
+ 
+</body>
+</html>

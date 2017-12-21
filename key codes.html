@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<!-- 	<link rel="stylesheet" type="text/css" href="key codes.css"> -->
+	<style type="text/css">
+		
+	#box {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	background-color: green;
+}  
+	</style>
+</head>
+<body>
+
+<h1>Using Key Codes</h1>
+<div id="box"></div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).keydown(function (e){
+if (e.which == 77){
+	$("#box").css("background-color", "maroon");
+}
+if (e.which == 83){
+	$("#box").css("background-color", "#DEB887");
+}
+})
+
+/*
+  A = 65
+  B = 66
+  D = 68
+  S = 83
+  R = 82
+  M = 77
+  G = 71
+  H = 72
+  J = 74
+  Y = 89
+  *
+  *
+  *
+   */
+
+</script>
+ 
+
+</body>
+</html>

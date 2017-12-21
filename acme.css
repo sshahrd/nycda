@@ -1,0 +1,33 @@
+body{
+	width: 90%;
+}
+
+{
+	.HOME
+	float:left;
+   margin-center:40%
+}
+
+.boxleft {
+	float:left;
+	width: 45%;
+}
+
+.boxright {
+	float:left;
+	width:45%;
+	margin-left: 10%;
+}
+.anvil {
+	margin-bottom:30px;
+}
+li {
+	display: inline-block;
+	margin-right: 40px;
+	color:white;
+}
+
+ul {
+	background-color: black;
+	padding:15px;
+}

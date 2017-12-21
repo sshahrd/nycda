@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookies 2</title>
+</head>
+<body>
+    <h1>Usings cookies 2</h1>
+<span id="user"></span>
+<div>
+<label>Username:</label>
+<input type="text" name="username" class="username">
+</div>
+
+<div>
+<label>Password:</label>
+<input type="password" name="password">
+</div>
+
+<div>
+<button id="btn">Sign In</button><button id="btn2">Logout</button>
+</div>
+
+<a href="anotherpage.html">Another Page</a>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+
+<script type="text/javascript" src="cookies2.js">
+				
+$("#btn").click(function(){
+        var username = $('.username').val();
+        console.log(username);
+        Cookies.set('userCookie1', username)
+        var user = Cookies.get('userCookie1');
+        $('#user').html(user + 'Yay!!! I'm logged in and in class session');
+    })
+
+$("#btn2").click(function(){
+    Cookies.set('userCookie2', ' ');
+    $("#user").html("You have logged out");
+    $(".username").val(" ");
+})				
+	
+$(document).ready(function(){
+    var user = Cookies.get('userCookie1');
+    if(user == " "){
+        $("#user").html("user + , Welcome to class");
+    }else{
+    $("#user").html("You have logged out.");
+	}
+// 	if(user == "John"){
+// 	$("body").css("background", "lightblue");
+// 	}
+//     if(user == "Jane"){
+//         $("body").css("background", "pink");
+//     }
+})		
+			
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+.modal{
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 30%;
+	padding: 30px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+}
+.modal-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,.6);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+.js-modal-close{
+	margin-left: 90%;
+}
+</style>
+</head>
+<body>
+<h1>Request Transcript</h1>
+
+First Name: <input type= "firstname" name= "firstname" id="firstname"><br>
+Last Name: <input type= "lastname" name= "lastname" id="lastname"><br>
+Address: <input type= "address" name= "address" id="address"><br>
+Major: <input type= "major" name= "major" id="major"><br>
+Degree Received: <input type= "degree" name= "degree" id="degree"><br>
+Year of Completion: <input type= "year" name= "year" id="year"><br>
+<button id="submit">Submit</button>
+
+
+<div class="modal-wrapper">
+<div class="modal">
+<header class="modal-header">
+	<button class="btn js-modal-close">X</button>
+</header>
+<div class="modal-content">
+	<h3> Thank You </h3>
+	<span id="userInfo"></span>
+
+<p>Your request for your transcript submitted. Expect to receive it in 7-10
+business days. </p>
+<button class="js-modal-close">Close</button>
+</div>
+</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$('#submit').click(function() {
+	$('.modal-wrapper').fadeIn();
+var firstname = $("#firstname").val();
+var lastname = $("#lastname").val();
+var address = $("#address").val();
+var major = $("#major").val();
+var degree = $('#degree').val();
+var year = $('#year').val();
+ 
+$("#userInfo").html(firstname + " " + lastname + "<br>" + address + "<br>" + "major");
+
+})
+
+//To close modal
+$('.js-modal-close').click(function(){
+$('.modal-wrapper').fadeOut();
+})
+
+</script>
+  	<!-- <button class="js-modal-close">Close</button>
+  </div>
+ -->
+<!-- <button id="openModal">Open Modal</button> -->
+
+<!-- <div class="modal-wrapper">
+   <div class="modal">
+  <header class="modal-header">
+      <button class="btn js-modal-close">X</button>
+   </header> -->
+  <!-- <div class="modal-content">
+  <strong><h3>Thank You</h3></strong>
+   -->
+  	<!-- <button class="js-modal-close">Close</button>
+  </div>
+ -->
+</body>
+</html>
+
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$("#btn").click(function() {
+
+var First Name = $("#firstname").val();
+var Last Name = $("#lastname").val();
+var Address = $("#address").val();
+var Major = $("#major").val();
+var Degree = $('#degree').val();
+var Year = $('#year').val();
+}
+
+</script>
+
+ -->

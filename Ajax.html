@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<img src="">
+<br>
+<br>
+
+City: <span id="city"></span><br>
+Temperature:<span id="temp"></span><br>
+Pressure: <span id="pressure"></span><br>
+<hr>
+
+City: <input type="text" name="city" id="city2">
+<br>
+Temperature: <span id="temp2"></span><br>
+<br>
+Pressure: <span id="pressure2"></span><br>
+
+<br><button id="btn">Get Info</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+var url;
+$.ajax({
+ url: 'https://jsonplaceholder.typicode.com/photos/1',
+ method: 'GET'
+}).done(function(data) {
+ console.log(data["title"]);
+ url = data["thumbnailUrl"];
+ $("img").attr("src", url);
+});
+
+// / For 2nd AJAX & JSON exercise
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=New+York,us&units=imperial&APPID=ff35f414ce471fc8ed06d312eeb7ac17',
+ function(data) {
+ console.log(data);
+ var city = data["name"];
+ var temp = data["main"]["temp"];
+ $("#city").html(city);
+ $("#temp").html(temp);
+var pressure = data["main"]["pressure"];
+$("#pressure").html(pressure);
+
+})
+
+// For 3rd AJAX & JSON exercise
+$("#btn").click(function(){ 
+var city2 = $("#city2").val();
+
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city2 + ',us&units=imperial&APPID=ff35f414ce471fc8ed06d312eeb7ac17',
+ function(data) {
+   console.log(data);
+   var temp = data["main"]["temp"];
+   $("#temp2").html(temp);
+
+   var pressure = data["main"]["pressure"];
+   $("#pressure2").html(pressure);
+ })
+
+})
+
+
+
+</script>
+</body>
+</html>

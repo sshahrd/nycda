@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+#carousel{
+	width: 720px;
+	height: 400px;
+	overflow: hidden;
+}
+
+.slides{
+	display: block;
+	width: 3000px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+}
+
+.slide{
+	float: left;
+	width: 600px;
+	height: 300px;
+
+}
+
+</style>
+</head>
+<body>
+<!-- <div class"carousel"> -->
+<div id="carousel">
+	<div class="slides">
+
+/*<!-- <img class="red train" src="train1.png ">
+<img class="green train" src="train2.png">
+<img class="yellow train" src="train3.png"> -->
+*/
+
+	<img src="train1.png.jpeg" class="slide">
+	<img src="train2.png.jpeg" class="slide">
+	<img src="train3.png.jpeg" class="slide">
+	</div>
+</div>
+<!-- </div> -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+var currentSlide = 1;
+var startCarousel = setInterval(startSliding, 1000);
+function startSliding(){
+    $("#carousel .slides").animate({'margin-left': '-=720px'}, 
+        2000, function(){
+        currentSlide++;
+            if(currentSlide == $(".slide").length){
+                currentSlide = 1;
+                $(".slides").css('margin-left', 0);
+            }
+    });
+}
+$("#carousel").mouseover(function(){
+    clearInterval(startCarousel);
+})
+$("#carousel").mouseleave(function(){
+    startCarousel = setInterval(startSliding, 1000);
+})
+
+</script>
+</body>
+</html>

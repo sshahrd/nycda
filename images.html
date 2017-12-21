@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+
+<style type="text/css">
+
+.train{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	color: white;
+	display: inline-block;
+}
+
+
+</style>
+</head>
+<body>
+
+<img class="red train" src="train1.png ">
+<img class="green train" src="train2.png">
+<img class="yellow train" src="train3.png">
+ 
+<!-- <div class="redtrain"> train1</div>
+
+<div class="greentrain">train2</div>
+
+<div class="yellow <!--train">train3</div> -->
+<!--  --><!--  -->
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+var index = 0;
+slideshow();
+
+function slideshow(){
+	$(".train").css("display", "none")
+	index++;
+	if (index > $(".train").length){
+		index = 1; 
+	}
+$(".train").eq(index-1).css("display" , "block");
+setTimeout(slideshow, 2000); // Change image every 2 sec
+}
+
+
+</script>
+</body>
+</html>
+

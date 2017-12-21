@@ -1,0 +1,14 @@
+td, tr{
+	border: 5px solid black;
+	text-align: center;
+	background-color: lightgrey;
+}
+
+td{
+	width: 40px;
+	height: 40px;
+}
+
+.signs {
+	background-color: orange;
+}

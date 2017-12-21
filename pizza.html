@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" type="text/css" href="pizza.css">
+</head>
+<body class="color">
+<h1> Order Pizza </h1>
+
+<h2>Select Pizza Size:</h2>
+
+Large: ($13.99)<input type="radio" name="pizza" id="large">
+Medium: ($11.99) <input type="radio" name="pizza" id="medium">
+Small: ($9.99) <input type="radio" name="pizza" id="small">
+
+<h3> Select Toppings: </h3>
+
+Pepperoni: ($1.99)<input type="checkbox" name="pepperoni" id="pepperoni">
+Sausage: ($1.99)<input type="checkbox" name="sausage" id="sausage">
+Mushroom:(1.99)<input type="checkbox" name="mushroom" id="mushroom"><br>
+<br>
+<div>
+<select id="drinks">
+	<option> regular coke </option>
+	<option> diet coke </option>
+	<option> water </option>
+</select>
+</div>
+<br>
+<!-- Sales Tax: <input type="text"
+name="sales" id="sales" value="6.875">%<br> -->
+
+
+<br>
+<button id="btn"><strong>Submit</strong></button><br>
+Here is your receipt:<br>
+<span id="items"></span>
+<br>
+</div>
+
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript.js" src="pizza.js"> </script>
+
+ <script type="text/javascript">
+
+$("#btn").click(function() {
+	var total = 0;
+	$("#items").html("");
+
+	if($("#large").is(":checked")) {
+		total = total + 13.99;
+	$("#items").append("large - 13.99 <br>");
+	}
+
+	if($("#medium").is(":checked")) {
+		total = total + 11.99;
+	$("#items").append("medium - 11.99 <br>");
+	}
+	if($("#small").is(":checked")) {
+		total = total + 9.99;
+	$("#items").append("small - 9.99 <br>");
+	}
+	
+	if($("#pepperoni").is(":checked")) {
+		total = total + 1.99;
+	$("#items").append("pepperoni - 1.99 <br>");
+	}
+	if($("#sausage").is(":checked")) {
+		total = total + 1.99;
+	$("#items").append("sausage - 1.99 <br>");
+	}
+	if($("#mushroom").is(":checked")) {
+		total = total + 1.99;
+	$("#items").append("mushroom - 1.99 <br>");
+	}
+	var drinks = $("#drinks").val();
+	$("#items").append(drinks + "<br>");
+	
+
+var salesTax = 0.06875 * total;
+total = total + salesTax;
+salesTax = salesTax.toFixed(2);
+$("#items").append("SalesTax: " + salesTax + "<br>");
+
+total = total.toFixed(2);  
+$("#items").append("Total: "+ total); 
+
+
+})                         
+</script>
+
+</body>
+</html>

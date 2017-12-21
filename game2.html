@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><h1>Jupiter</h1></title>
+<style type="text/css">
+
+#box{
+background-image: url('spaceship1.png');
+position: absolute;
+height: 200px;
+width: 200px;
+margin-bottom: 40px;
+animation: move-around 6s 4;
+}
+
+@keyframes move-around {
+		0%{
+			top: 0px;
+		}
+
+		50%{
+			/*	left:100px;
+			}
+
+		100*/%{
+			top: 300px;
+		}
+	/*#planet{
+		background-image: url('planet.png');
+		height: 250px;
+		width: 250px;
+		margin-top: 10px;
+		margin: center;
+	}*/
+
+/*body{
+	background-image: url('space.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+*/
+</style>
+</head>
+
+<body>
+
+<img id="spaceship" src="spaceship1.png">
+<img id="planet" src="planet.png">
+<strong><input type= "You Win" name="You Win" id="You Win" placeholder="You Win"></strong>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+var boxPosition = ("#box").position;
+var boxXPosition = boxPosition.left;
+var boxYPosition = boxPosition.top;
+if(boxYPosition < 0) {
+	$("result").css("display" , "inline-block")
+	$("result").html("You Win");
+
+}
+
+</script>
+
+</body>
+</html>

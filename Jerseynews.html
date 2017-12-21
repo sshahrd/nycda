@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+	img{
+    width: 300px;
+    height: 250px;
+}
+  
+  .all-news-articles{
+  	color: black;
+  }
+ 
+ p{ color: red;
+
+ }
+
+ span {
+ 	color: black;
+ 	font-weight: bolder;
+ }
+
+</style>  
+</head>
+<body>
+<div id="container">
+<h1>All News Updates From Jersey Journal News </h1>
+
+
+<div class="all-news-articles"></div>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+
+
+var apiKey = 'f12bd9a393c94702bab805ed167c838a'
+
+$.getJSON('https://newsapi.org/v1/articles?source=cnn&apiKey=' + apiKey, 
+function(data) {
+ console.log(data);
+
+    for(var i = 0; i < data.articles.length; i++){
+        console.log(data.articles.length);
+
+        var author = data["articles"][i]["author"];
+   var content = data["articles"][i]["description"];
+   var date = data["articles"][i]["publishedAt"];
+   var title = data["articles"][i]["title"];
+   var pic = data["articles"][i]["urlToImage"];
+
+   $(".all-news-articles").append(
+         author + "<br>" +
+    "<span>" + title + "</span>"+ "<br>" +
+         content + "<br>" +
+        "<p>" + date + "</p>" + "<br>" +
+         "<img src="+ pic + ">" + "<br>" +
+     "<hr>"
+        )
+}
+})
+    
+
+
+
+</script>
+</body>
+</html>

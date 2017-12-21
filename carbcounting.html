@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style type="text/css">
+
+
+.heading{
+	height: 140px;
+	margin-left: 380px;
+}
+.title{
+	margin-top: 50px;
+	font size: 15px;
+	text-align: center;
+}
+
+.fruits{
+	height: 150px;
+	width: 200px;
+	margin-left: 30px;
+}
+
+.carbs{
+	margin-left: 30px;
+	font-size: 15px;
+	font-style: bold;
+}
+
+#drinks{
+	font-size: 15px;
+}
+
+#bread{
+	font-size: 15px;
+}
+
+#eggs{
+	font-size: 15px;
+}
+
+#fruits{
+	font-size: 15px;
+}
+
+#eggs{
+	font-size: 15px;
+}
+
+#yogurt{
+	font-size: 15px;
+}
+
+.modal-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,.6);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+.modal{
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 30%;
+	padding: 30px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+} 
+
+.js-modal-close{
+	margin-left: 90%;
+}
+
+.modal-wrapper{
+	position:fixed;
+	top:0;
+	left:0;
+	background-color: rgba(0,0,0,.6);
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+.modal{
+	width: 400px;
+	height: 200px;
+	position: relative;
+	top: 30%;
+	padding: 30px;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: 10px;
+} 
+
+.js-modal-close{
+	margin-left: 90%;
+}
+
+</style>
+</head>
+<body>
+<img class="heading" src="xmasheading.png">
+<h1 class= "title">Holiday Brunch</h1>
+<div>
+<select id="drinks">
+	<option> 4oz orange juice </option>
+	<option> 8oz orange juice </option>
+	<option> 8oz coffee with cream/milk no sugar </option>
+	<option> 8oz coffee with cream/milk & sugar </option>
+	<option> 8oz hot chocolate </option>
+	<option> 8oz hot chocolate with whip cream </option>
+</select>
+</div>
+<br>
+<br>	
+<div>
+<select id="bread">
+<option> Mini bagel with 1 oz cream cheese </option>
+<option> Regular bagel with 3oz cream cheese </option>
+<option> 2 Slice whole wheat toast plain </option>
+<option> 2 Slice whole wheat toast with butter </option>
+<option> English muffin plain </option>
+<option> English muffin with butter </option>
+<option> Blueberry muffin </option>
+<option> Croissant </option>
+<option> Whole wheat croissant </option>
+<option> 2 Pancakes w/ butter, syrup </option>
+<option> 2 Pancakes w/ butter, lite syrup </option>
+<option> 2 Pancakes w/ butter, sugar free syrup </option>
+</select>
+</div>
+<br>
+<br>
+<select id="eggs">
+<option> 1 Scrambled egg </option>
+<option> 2 Scrambled eggs </option>
+<option> 1 Egg white </option>
+<option> 1 Egg white veggie </option>
+<option> 2 Egg whites scrambled </option>
+<option> 2 Eggs sunny side </option>
+</select>
+</div>
+<br>
+<br>
+<div>
+<select id="fruits">
+<option> Banana </option> 
+<option> Blueberries </option>
+<option> Raspberries </option>
+<option> Peaches </option>
+</select>
+</div>
+<br>
+<br>
+<div>
+<select id="yogurt">
+<option class= "regyogurt"> Regular plain yogurt </option>
+<option class= "regyfruit"> Regular plain yogurt with fruit </option>
+<option class= "litey"> Lite yogurt </option>
+<option class= "liteyfruit"> Lite yogurt with fruit </option>
+<option class=  "greeky"> Greek yogurt </option>
+</select>
+</div>
+</div>
+<br>
+
+<!-- <p>Nutriton Value of items:
+<ul>
+<li 1 large egg with yolk cooked = 75-90 cal, protein =  6gms, total fat = 7 gms, saturated fat = 2 grams, cholesterol  = 169 mg, carbs = 0 gms> 
+<li 1 large egg white cooked = 17 cal, 4 gms protein, 0gms total fat, 0 gms saturated fat, cholesterol = 0 gms, carbs = 0gms>
+<li 1 8oz cup plain yogurt with whole milk = 149 cal, 8.5 gms protein, 8gms total fat, 5gms saturated fat, cholesterol = 32mg, carbs = 11 gms>
+<li 1 8oz cup plain yogurt with fruit topping = 180 cal, 8.5 gms protein, 8gms total fat, 5 gms saturated fat, cholesterol = 32mg, carbs = 18gms
+<li 1 8oz cup lite yogurt plain with 2% milk = 100 cal, total fat = 3gms, saturated fat = 2gms, carbs = 12 gms, cholesterol  = 15mg> 
+<li 1 8oz cup lite yogurt with fruit topping= 130 cal, total fat = 3gms, saturated fat =  2gms,
+carbs = 19gms, cholesterol = 15mg>
+</li>
+</ul>
+<p> -->
+
+<br>
+<br><button id="openModal">Submit Your selection</button>
+
+<div class="modal-wrapper">
+	   <div class="modal">
+	  <header class="modal-header">
+	   <div class="modal-content">
+	  	<p> Here is your order. 
+	  	Your nutrition analysis will follow. </p>
+			<span id="userInfo"></span>
+	  	<button class="js-modal-close">Close</button>  	
+	 </div>
+	</div>
+	</div>
+
+<!-- <div class="modal-wrapper">
+	   <div class="modal">
+	  <header class="modal-header">
+	   <div class="modal-content">
+	  	<h3> Thank you for your order. </h3>
+	  	<p>Unfortunately, your meal selection wasn't quite healthy. 
+	  	 You're welcome to try again. </p>
+	  	<button class="js-modal-close">Close</button>
+	  </div> -->
+	<!--  </div>
+	</div>
+<span id="Food"></span> -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+// var bagel = {"name": "bagel", "carbs": 30, "protein":5};
+// $("#food").html(bagel.carbs);
+
+// // To open modal
+
+// var mealselection = ('<500cal, <50gms CHO, <20gms total fat, <5 gns saturated fat, <100mg cholesterl, at least 30gms protein');
+
+// if (meal selection = '<500cal, <50gms CHO, <20gms total fat, <5 gns saturated fat, <100mg cholesterl, at least 30gms protein');
+
+
+$('#openModal').click(function() {
+	$('.modal-wrapper').fadeIn();
+
+var drinks = $("#drinks").val();
+var bread = $("#bread").val();
+var eggs = $("#eggs").val();
+var fruits = $("#fruits").val();
+var yogurt = $('#yogurt').val();
+
+console.log(drinks);
+
+if(drinks == "4oz orange juice"){
+	var carbs = 15;
+}
+if(drinks == "8oz orange juice"){
+	var carbs = 2*15;
+}
+
+if(drinks == "8oz coffee with cream/milk no sugar"){
+	var carbs = 10;
+}
+
+if(drinks == "8oz coffee with cream/milk & sugar"){
+	var carbs = 15;
+}
+
+if(drinks == "8oz hot chocolate"){
+	var carbs = 15;
+}
+if(drinks == "8oz hot chocolate with whip cream"){
+	var carbs = 15;
+}
+
+
+		// Bread
+if(bread == "Mini bagel with 1 oz cream cheese"){
+	var breadcho = 30;
+}
+
+if(bread == "Regular bagel with 3oz cream cheese"){
+	var breadcho = 60;
+}
+
+if(eggs == "1 Scrambled egg"){
+	var eggscho = 0;
+}
+
+
+$("#userInfo").html(drinks  + bread + " = " + breadcho + "gms of carbs" + eggs + " = " + eggscho + "gms of carbs" + fruits + "<br> " + yogurt);
+})
+
+$('.js-modal-close').click(function() {
+	$('.modal-wrapper').fadeOut();
+})
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
