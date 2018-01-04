@@ -66,9 +66,9 @@
 
 .modal{
 	width: 400px;
-	height: 200px;
+	height: 400px;
 	position: relative;
-	top: 30%;
+	top: 20%;
 	padding: 30px;
 	margin: 0 auto;
 	background-color: white;
@@ -78,8 +78,7 @@
 .js-modal-close{
 	margin-left: 90%;
 }
-
-.modal-wrapper{
+.modal-wrapper2{
 	position:fixed;
 	top:0;
 	left:0;
@@ -91,7 +90,7 @@
 	display: none;
 }
 
-.modal{
+.modal2{
 	width: 400px;
 	height: 200px;
 	position: relative;
@@ -105,6 +104,12 @@
 .js-modal-close{
 	margin-left: 90%;
 }
+
+
+*/
+/*.js-modal-close{
+	margin-left: 90%;
+}*/
 
 </style>
 </head>
@@ -142,33 +147,34 @@
 <br>
 <br>
 <select id="eggs">
-<option> 1 Scrambled egg </option>
-<option> 2 Scrambled eggs </option>
-<option> 1 Egg white </option>
-<option> 1 Egg white veggie </option>
-<option> 2 Egg whites scrambled </option>
-<option> 2 Eggs sunny side </option>
+<option> 1 scrambled egg </option>
+<option> 2 scrambled eggs </option>
+<option> 1 egg white </option>
+<option> 1 egg white veggie </option>
+<option> 2 egg whites scrambled </option>
+<option> 2 eggs sunny side </option>
 </select>
 </div>
 <br>
 <br>
 <div>
 <select id="fruits">
-<option> Banana </option> 
-<option> Blueberries </option>
-<option> Raspberries </option>
-<option> Peaches </option>
+<option> Baby banana </option> 
+<option> Medium banana </option>
+<option> 1/2 Cup blueberries </option>
+<option> 1/2 Cup raspberries </option>
+<option> Medium peach </option>
 </select>
 </div>
 <br>
 <br>
 <div>
 <select id="yogurt">
-<option class= "regyogurt"> Regular plain yogurt </option>
-<option class= "regyfruit"> Regular plain yogurt with fruit </option>
-<option class= "litey"> Lite yogurt </option>
-<option class= "liteyfruit"> Lite yogurt with fruit </option>
-<option class=  "greeky"> Greek yogurt </option>
+<option class= "regyogurt"> 8oz Regular plain yogurt </option>
+<option class= "regyfruit"> 8oz Regular plain yogurt with fruit </option>
+<option class= "litey"> 8 oz Lite yogurt </option>
+<option class= "liteyfruit"> 8oz Lite yogurt with fruit </option>
+<option class=  "greeky"> 8 oz Plain greek yogurt </option>
 </select>
 </div>
 </div>
@@ -194,14 +200,23 @@ carbs = 19gms, cholesterol = 15mg>
 	   <div class="modal">
 	  <header class="modal-header">
 	   <div class="modal-content">
-	  	<p> Here is your order. 
-	  	Your nutrition analysis will follow. </p>
+	  	<p> Here is your order.  </p>
 			<span id="userInfo"></span>
 	  	<button class="js-modal-close">Close</button>  	
 	 </div>
 	</div>
 	</div>
 
+<div class="modal-wrapper2">
+	   <div class="modal2">
+	  <header class="modal-header2">
+	   <div class="modal-content2">
+	  	<p> Recommondations.  </p>
+			<span id="userInfo2"></span>
+	  	<button class="js-modal-close2">Close</button>  	
+	 </div>
+	</div>
+	</div>
 <!-- <div class="modal-wrapper">
 	   <div class="modal">
 	  <header class="modal-header">
@@ -242,52 +257,215 @@ var yogurt = $('#yogurt').val();
 console.log(drinks);
 
 if(drinks == "4oz orange juice"){
-	var carbs = 15;
+	var drinkscarbs = 15;
+	var drinkspro = 0;
+	var drinksfat = 0;
+
 }
 if(drinks == "8oz orange juice"){
-	var carbs = 2*15;
+	var drinkscarbs = 30;
+	var drinkspro = 0;
+	var drinksfat = 0;
 }
 
 if(drinks == "8oz coffee with cream/milk no sugar"){
-	var carbs = 10;
+	var drinkscarbs = 10;
+	var drinkspro = 0;
+	var drinksfat = 5;
 }
 
 if(drinks == "8oz coffee with cream/milk & sugar"){
-	var carbs = 15;
+	var drinkscarbs = 15;
+	var drinkspro = 0;
+	var drinksfat = 5;
 }
 
 if(drinks == "8oz hot chocolate"){
-	var carbs = 15;
+	var drinkscarbs = 15;
+	var drinkspro = 5;
+	var drinksfat = 5;
 }
 if(drinks == "8oz hot chocolate with whip cream"){
-	var carbs = 15;
+	var drinkscarbs = 15;
+	var drinkspro = 5;
+	var drinksfat = 7;
 }
 
 
 		// Bread
 if(bread == "Mini bagel with 1 oz cream cheese"){
-	var breadcho = 30;
+	var breadcarbs = 30;
+	var breadpro = 5;
+	var breadfat = 3;
 }
 
 if(bread == "Regular bagel with 3oz cream cheese"){
-	var breadcho = 60;
+	var breadcarbs = 60;
+	var breadpro = 3;
+	var breadfat = 15;
 }
 
-if(eggs == "1 Scrambled egg"){
-	var eggscho = 0;
+if(eggs == "1 scrambled egg"){
+	var eggscarbs = 0;
+	var eggspro = 7;
+	var eggsfat = 5;
+}
+console.log("fruits " + fruits);
+
+if(fruits == "Baby banana"){
+	var  fruitscarbs = 20;
+	var  fruitspro = 0;
+	var  fruitsfat = 0;
+}
+
+if(fruits == "Medium banana"){
+	var fruitscarbs = 30;
+	var fruitspro = 0;
+	var fruitsfat = 0;
+}
+
+if(fruits == "1/2 Cup blueberris"){
+	var fruitscarbs = 15;
+	var fruitspro = 0;
+	var fruitsfat = 0;
+}
+
+if(fruits == "1/2 Cup raspberries"){
+	var fruitscarbs = 15;
+	var fruitspro = 0;
+	var fruitsfat = 0;
 }
 
 
-$("#userInfo").html(drinks  + bread + " = " + breadcho + "gms of carbs" + eggs + " = " + eggscho + "gms of carbs" + fruits + "<br> " + yogurt);
-})
+if(fruits == "1 Medium peach"){
+	var fruitscarbs = 20;
+	var fruitspro = 0;
+	var fruitsfat = 0;
+
+}
+
+if(yogurt == "8oz Regular plain yogurt"){
+	var yogurtcarbs = 20;
+	var yogurtpro = 8;
+	var yogurtfat = 5;
+
+}
+
+if(yogurt == "8 oz Regular plain yogurt with fruit"){
+	var yogurtcarbs = 35;
+	var yogurtpro = 8;
+	var yogurtfat = 5;
+
+}
+
+if( yogurt == "8 oz Lite yogurt"){
+	var yogurtcarbs = 20;
+	var yogurtpro = 8;
+	var yogurtfat = 3;
+}
+
+if( yogurt == "8 oz Plain greek yogurt"){
+	var yogurtcarbs = 20;
+	var yogurtpro = 11;
+	var yogurtfat = 0;
+}
+
+
+
+var items = ["bread", "eggs", "yogurt", "fruits", "drinks"];
+
+
+
+for (var j = 0; j < items.length; j++){
+
+
+	var item = items[j];
+
+	if (item == "drinks"){
+	var carbs = drinkscarbs;
+	var protein = drinkspro;
+	var fat = drinksfat;
+	}
+
+	if (item == "bread"){
+	var carbs = breadcarbs;
+	var protein = breadpro;
+	var fat = breadfat;
+	}
+	if (item == "eggs"){
+	var carbs = eggscarbs;
+	var protein = eggspro;
+	var fat = eggsfat;
+	}
+	if (item == "yogurt"){
+	var carbs = yogurtcarbs;
+	var protein = yogurtpro;
+	var fat = yogurtfat;
+	}
+	if (item == "fruits"){
+	var carbs = fruitscarbs;
+	var protein = fruitspro;
+	var fat = fruitsfat;
+	}
+
+
+	var nutrients = [carbs, protein, fat];
+	for (var i = 0; i < nutrients.length; i++){
+
+
+
+
+	// var nutrientValue = nutrients[i];
+
+
+}
+
+$("#userInfo").append(items[j]+ " carbs= " + nutrients[0] + "<br>");
+$("#userInfo").append(items[j]+ " protein= " + nutrients[1] + "<br>");
+$("#userInfo").append(items[j]+ " fat= " + nutrients[2] + "<br>");
+
+
+
+// $("#userInfo").html(drinks + " , " +  bread  + " , " + eggs + " , " + fruits + " , " + yogurt + "<br>"
+// 	+ "<br>" + "Your nutrition analysis:" + "<br>" + " drinks: " + carbs + "gms of carbs" + "<br>" + "bread: " + breadcho + " gms of carbs" + "<br>" + "eggs: " + eggscho + "<br><br>");
+
+
+	
+}
+$("#userInfo").append("<br>Here is your order: <br>"); 
+$("#userInfo").append(yogurt + ", " +  fruits +  ", " +  ", " + bread + ", " + eggs + ", " + drinks +".");
+
+// var totalcarbs = carbs + breadcho + eggscho;
+
+// $("#userInfo").append("Your total carbs consumed is: " + totalcarbs);
+
+// if (totalcarbs > 45) {
+// 	$("#userInfo").append(" <br><span style='color:red'> You have gone over your carb limit based on your weight</span>")
+// }
+
+ })
+
+
+// if ("#userInfo").html(drinks + " , " +  bread  + " , " + eggs + fruits + "<br> " + yogurt + "<br>"
+// 	+ "<br>" + "Your nutrition analysis:" + "<br>" + " drinks: " + carbs + "<br>" + "bread: " + breadcho + "<br>" + "eggs: " + eggscho);
+// 	" Happy holidays!, Enjoy your healthy holiday meal"
+// }
+
+// else("Happy Holidays!, Enjoy your meal");
+
+// $('.js-modal-close').click(function() {
+// 	$('.modal-wrapper').fadeOut();
+// })
+
 
 $('.js-modal-close').click(function() {
-	$('.modal-wrapper').fadeOut();
+	$('.modal-wrapper2').fadeIn();
 })
 
-
-
-
+$('.js-modal-close2').click(function() {
+	$('.modal-wrapper').fadeOut();
+	$('.modal-wrapper2').fadeOut();
+})
 
 
 

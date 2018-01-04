@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+
+#carousel{
+	width: 500px;
+	height: 300px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.slides{
+	display: block;
+	width: 2000px;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+}
+
+.slide{
+	float: left;
+	width: 500px;
+	height: 300px;
+
+}
+
+/*.bread{
+	height: 15%;
+	width: 15%;
+}
+
+.egg{
+	margin-top: 5%;
+	height: 10%;
+	width: 20%;
+}*/
+.heading {
+height: 140px;
+margin-left: 380px;
+}
+.title {
+margin-top: 50px;
+font size: 15px;
+text-align: center;
+}
+
+.fruits{
+height: 150px;
+width: 200px;
+margin-left: 30px;
+}
+
+.carbs{
+margin-left: 30px;
+font-size: 15px;
+font-style: bold;
+}
+
+#drinks{
+font-size: 15px;
+}
+
+#bread{
+font-size: 15px;
+}
+
+#eggs{
+font-size: 15px;
+}
+
+#fruits{
+font-size: 15px;
+}
+
+#eggs{
+font-size: 15px;
+}
+
+#yogurt{
+font-size: 15px;
+}
+
+.modal-wrapper{
+position:fixed;
+top:0;
+left:0;
+background-color: rgba(0,0,0,.6);
+width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
+display: none;
+}
+
+.modal{
+width: 400px;
+height: 250px;
+position: relative;
+top: 20%;
+padding: 30px;
+margin: 0 auto;
+background-color: lightcyan;
+border-radius: 10px;
+}
+
+.js-modal-close{
+margin-left: 90%;
+}
+.modal-wrapper2{
+position:fixed;
+top:0;
+left:0;
+background-color: rgba(0,0,0,.6);
+width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
+display: none;
+}
+
+.modal2{
+width: 400px;
+height: 200px;
+position: relative;
+top: 30%;
+padding: 30px;
+margin: 0 auto;
+background-color: orange;
+border-radius: 10px;
+}
+
+.js-modal-close{
+margin-left: 90%;
+}
+
+</style>
+</head>
+<body>
+<img class="heading" src="xmasheading.png">
+<h1 class= "title">Holiday Brunch</h1>
+
+<div id="carousel">
+	<div class="slides">
+ <img src="coffee.jpeg" class="slide"> 
+ <img src="bagelbasket.png" class="slide"> 
+ <img src="raspberries.png" class="slide"> 
+ <img src="boiledegg1.png" class="slide">  
+</div>
+</div>
+<select id="drinks">
+<option> 4oz orange juice </option>
+<option> 8oz orange juice </option>
+<option> 8oz coffee with cream/milk no sugar </option>
+<option> 8oz coffee with cream/milk & sugar </option>
+<option> 8oz hot chocolate </option>
+<option> 8oz hot chocolate with whip cream </option>
+<option>                             </option>
+</select>
+</div>
+<br>
+<br>
+<div>
+<select id="bread">
+<option> Mini bagel with 1 oz cream cheese </option>
+<option> Regular bagel with 3oz cream cheese </option>
+<option> 2 Slice whole wheat toast plain </option>
+<option> 2 Slice whole wheat toast with butter </option>
+<option> English muffin plain </option>
+<option> English muffin with butter </option>
+<option> Blueberry muffin </option>
+<option> Croissant </option>
+<option> Whole wheat croissant </option>
+<option> 2 Pancakes w/ 1 tbsp butter, 1/4cup syrup </option>
+<option> 2 Pancakes w/ 1 tbsp butter, 1/4cup lite syrup </option>
+<option> 2 Pancakes w/ 1 tbsp butter, sugar free syrup </option>
+<option>                                </option>
+</select>
+</div>
+<br>
+<br>
+<select id="eggs">	
+<option></option>						
+<option> 1 scrambled egg </option>
+<option> 2 scrambled eggs </option>
+<option> 1 egg white </option>
+<option> 1 egg white veggie </option>
+<option> 2 egg whites scrambled </option>
+<option> 2 eggs sunny side </option>
+</select>
+</div>
+	<br>
+<br>
+<br>
+<div>
+<select id="fruits">
+<option> Baby banana </option>
+<option> Medium banana </option>
+<option> 1/2 Cup blueberries </option>
+<option> 1/2 Cup raspberries </option>
+<option> Medium peach </option>
+<option>              </option>
+</select>      
+</div>
+<br>
+<br>
+<div>
+<select id="yogurt">
+<option class= "regyogurt"> 8oz Regular plain yogurt </option>
+<option class= "regyfruit"> 8oz Regular plain yogurt with fruit </option>
+<option class= "litey"> 8 oz Lite yogurt </option>
+<option class= "liteyfruit"> 8oz Lite yogurt with fruit </option>
+<option class= "greeky"> 8 oz Plain greek yogurt </option>
+<option>                      </option>
+</select>
+</div>
+<br>
+<br>
+<br><button id="openModal">Submit Your selection</button>
+
+<div class="modal-wrapper">
+<div class="modal">
+<header class="modal-header">
+<div class="modal-content">
+<p> Here is your order: </p>
+<span id="userInfo"></span>
+<span id="userInfo-carbs"></span>
+<span id="userInfo-pro"></span>
+<span id="userInfo-fat"></span>
+<span id="conclusion"></span>
+<br>
+<span id="comment"></span>
+<br>
+<button class="js-modal-close">Close</button>
+</div>
+</div>
+</div>
+
+<div class="modal-wrapper2">
+<div class="modal2">
+<header class="modal-header2">
+<div class="modal-content2">
+<p> Recommendations. </p>
+<span id="userInfo2"></span>
+<button class="js-modal-close2">Close</button>
+</div>
+</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+var recommendations = false;
+$('#openModal').click(function() {
+$('.modal-wrapper').fadeIn();
+var totalcarbs = 0;
+var totalpro = 0;
+var totalfat = 0;
+
+var drinks = $("#drinks").val();
+var bread = $("#bread").val();
+var eggs = $("#eggs").val();
+var fruits = $("#fruits").val();
+var yogurt = $('#yogurt').val();
+
+console.log(drinks);
+
+if(drinks == "4oz orange juice"){
+var drinkscarbs = 15;
+var drinkspro = 0;
+var drinksfat = 0;
+
+}
+if(drinks == "8oz orange juice"){
+var drinkscarbs = 30;
+var drinkspro = 0;
+var drinksfat = 0;
+}
+
+if(drinks == "8oz coffee with cream/milk no sugar"){
+var drinkscarbs = 10;
+var drinkspro = 0;
+var drinksfat = 5;
+}
+
+if(drinks == "8oz coffee with cream/milk & sugar"){
+var drinkscarbs = 15;
+var drinkspro = 0;
+var drinksfat = 5;
+}
+
+if(drinks == "8oz hot chocolate"){
+var drinkscarbs = 15;
+var drinkspro = 5;
+var drinksfat = 5;
+}
+if(drinks == "8oz hot chocolate with whip cream"){
+var drinkscarbs = 15;
+var drinkspro = 5;
+var drinksfat = 7;
+}
+
+
+// Bread
+if(bread == "Mini bagel with 1 oz cream cheese"){
+var breadcarbs = 30;
+var breadpro = 5;
+var breadfat = 3;
+}
+
+if(bread == "Regular bagel with 3oz cream cheese"){
+var breadcarbs = 60;
+var breadpro = 3;
+var breadfat = 15;
+}
+
+if(bread == "2 Slice whole wheat toast plain"){
+var breadcarbs = 30;
+var breadpro = 3;
+var breadfat = 0;
+}
+
+if(bread == "2 Slice whole wheat toast with 1 tbsp butter"){
+var breadcarbs = 25;
+var breadpro = 3;
+var breadfat = 12;
+}
+
+if(bread == "English muffin plain"){
+var breadcarbs = 25;
+var breadpro = 3;
+var breadfat = 0;
+}
+
+if(bread == "Blueberry muffin"){
+var breadcarbs = 30;
+var breadpro = 3;
+var breadfat = 0;
+}
+
+if(bread == "Croissant"){
+var breadcarbs = 35;
+var breadpro = 5;
+var breadfat = 12;
+}
+
+if(bread == "Whole wheat croissant"){
+var breadcarbs = 30;
+var breadpro = 4;
+var breadfat = 12;
+}
+
+if(bread == "2 Pancakes w/ 1 tbsp butter, 1/4cup syrup "){
+var breadcarbs = 30;
+var breadpro = 5;
+var breadfat = 12;
+}
+
+if(bread == "2 Pancakes w/ 1 tbsp butter, 1/4cup lite syrup"){
+var breadcarbs = 45;
+var breadpro = 2;
+var breadfat = 12;
+}
+
+if(bread == "2 Pancakes w/ 1 tbsp butter, sugar free syrup"){
+var breadcarbs = 50;
+var breadpro = 2;
+var breadfat = 12;
+}
+
+
+if(eggs == "1 scrambled egg"){
+var eggscarbs = 0;
+var eggspro = 6;
+var eggsfat = 5;
+}
+
+if(eggs == "2 scrambled eggs"){
+var eggscarbs = 0;
+var eggspro = 12;
+var eggsfat = 5;
+}
+
+if(eggs == "1 egg white"){
+var eggscarbs = 0;
+var eggspro = 6;
+var eggsfat = 5;
+}
+
+if(eggs == "1 egg white veggie"){
+var eggscarbs = 0;
+var eggspro = 6;
+var eggsfat = 5;
+}
+
+if(eggs == "2 eggs scrambled"){
+var eggscarbs = 0;
+var eggspro = 12;
+var eggsfat = 10;
+}
+
+if(eggs == "2 egg whites scrambled"){
+var eggscarbs = 0;
+var eggspro = 12;
+var eggsfat = 10;
+}
+
+if(eggs == "2 eggs sunny side"){
+var eggscarbs = 0;
+var eggspro = 12;
+var eggsfat = 10;
+}
+
+console.log("fruits " + fruits);
+
+if(fruits == "Baby banana"){
+var fruitscarbs = 20;
+var fruitspro = 0;
+var fruitsfat = 0;
+}
+
+if(fruits == "Medium banana"){
+var fruitscarbs = 30;
+var fruitspro = 0;
+var fruitsfat = 0;
+}
+
+if(fruits == "1/2 Cup blueberris"){
+var fruitscarbs = 15;
+var fruitspro = 0;
+var fruitsfat = 0;
+}
+
+if(fruits == "1/2 Cup raspberries"){
+var fruitscarbs = 15;
+var fruitspro = 0;
+var fruitsfat = 0;
+}
+
+
+if(fruits == "1 Medium peach"){
+var fruitscarbs = 20;
+var fruitspro = 0;
+var fruitsfat = 0;
+}
+
+if(yogurt == "8oz Regular plain yogurt"){
+var yogurtcarbs = 20;
+var yogurtpro = 8;
+var yogurtfat = 5;
+}
+
+if(yogurt == "8 oz Regular plain yogurt with fruit"){
+var yogurtcarbs = 35;
+var yogurtpro = 8;
+var yogurtfat = 5;
+
+}
+
+if( yogurt == "8 oz Lite yogurt"){
+var yogurtcarbs = 20;
+var yogurtpro = 8;
+var yogurtfat = 3;
+}
+
+if( yogurt == "8 oz Plain greek yogurt"){
+var yogurtcarbs = 20;
+var yogurtpro = 11;
+var yogurtfat = 0;
+}
+
+var items = ["bread", "eggs", "yogurt", "fruits", "drinks"];
+
+for (var j = 0; j < items.length; j++){
+var item = items[j];
+
+if (item == "drinks"){
+var carbs = drinkscarbs;
+var protein = drinkspro;
+var fat = drinksfat;
+}
+
+if (item == "bread"){
+var carbs = breadcarbs;
+var protein = breadpro;
+var fat = breadfat;
+}
+if (item == "eggs"){
+var carbs = eggscarbs;
+var protein = eggspro;
+var fat = eggsfat;
+}
+if (item == "yogurt"){
+var carbs = yogurtcarbs;
+var protein = yogurtpro;
+var fat = yogurtfat;
+}
+if (item == "fruits"){
+var carbs = fruitscarbs;
+var protein = fruitspro;
+var fat = fruitsfat;
+}
+
+var nutrients = [carbs, protein, fat];
+
+totalcarbs = totalcarbs + nutrients[0];
+totalpro = totalpro + nutrients[1];
+totalfat = totalfat + nutrients[2];
+}
+
+
+
+
+
+$("#userInfo").html(yogurt + ", " + fruits + ", " + bread + ", " + eggs +
+", and " + drinks +".<br><br>");
+
+$("#userInfo-carbs").html("Your total carbs = " + totalcarbs + "gms<br>");
+$("#userInfo-pro").html("Your total protein = " + totalpro + "gms<br>");
+$("#userInfo-fat").html("Your total fat = " + totalfat + "gms<br><br>");
+if(totalcarbs > 60 || totalpro > 60 || totalfat > 30){
+$("#conclusion").css("color", "red");
+
+$("#comment").html("Healthy guidelines suggest: 55% carbs, <30%total fat, <10% saturated fat, 10-15% total protein intake based on the average 2000 cal diet.");
+
+$("#conclusion").html("Please click 'close' for recommendations.");
+
+recommendations = true;
+} else{
+$("#conclusion").css("color", "green");
+$("#conclusion").html("Enjoy your breakfast!!!");
+recommendations = false;
+}
+
+})
+
+$('.js-modal-close').click(function() {
+$('.modal-wrapper').fadeOut();
+
+if(recommendations == true){
+$('.modal-wrapper2').fadeIn();
+$("#userInfo2").html(`(1) Please cut back on your breakfast or make
+healthier choices.<br><br>
+(2) See an RD. <br><br>
+(3) Also start exercising.<b><br>`+"<br>");
+}
+})
+
+$('.js-modal-close2').click(function() {
+$('.modal-wrapper2').fadeOut();
+})
+
+var currentSlide = 1;
+var startCarousel = setInterval(startSliding, 1000);
+function startSliding(){
+    $("#carousel .slides").animate({'margin-left': '-=720px'}, 
+        2000, function(){
+        currentSlide++;
+            if(currentSlide == $(".slide").length){
+                currentSlide = 1;
+                $(".slides").css('margin-left', 0);
+            }
+    });
+}
+$("#carousel").mouseover(function(){
+    clearInterval(startCarousel);
+})
+$("#carousel").mouseleave(function(){
+    startCarousel = setInterval(startSliding, 1000);
+})
+
+</script>
+</body>
+</html>
